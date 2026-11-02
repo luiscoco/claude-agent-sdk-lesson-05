@@ -6,6 +6,35 @@ Learn **Lesson 5: Tools and Permissions** by separating a capability's contract,
 
 ![Refreshed course interface with larger text](docs/visual-refresh-desktop.png)
 
+## Visual style and reading controls
+
+The interface follows the course reference apps: pale blue backgrounds, navy text, orange heading accents, blue controls, rounded panels, and the course astronaut mascot. The screenshot above shows the refreshed design.
+
+| Reading element            | Default presentation                                             |
+| -------------------------- | ---------------------------------------------------------------- |
+| Body text                  | **21 px**, with comfortable line spacing                         |
+| Labels and supporting text | Approximately **18–20 px** or larger                             |
+| Code                       | Approximately **20 px**, wrapping within its panel               |
+| Larger setting             | **24 px** base text, with scalable labels, controls and headings |
+
+Use **Text size → Larger** in the page header when you need bigger text. Choose **Comfortable** to return to the default size. The choice is saved in this application's browser storage and remains after a reload; it makes no API request. Browser zoom is also available.
+
+On phones and narrower windows, navigation and work areas stack so controls and text remain usable. You can open **Lesson focus & author** where that panel is available. Lesson activities, practice/live distinctions, permissions and server-side key handling continue to work as described below.
+
+The shared presentation files are `src/client/course-theme.css` (palette and layout), `src/client/course-theme.ts` (reading preference and course presentation), and `public/course-astronaut.png` (reference mascot). See [visual style details](docs/visual-style.md) for the reference sources and a full-size screenshot.
+
+### Update an existing checkout
+
+Pull the latest changes and restart the local app:
+
+```sh
+git pull --ff-only
+npm ci
+npm run dev
+```
+
+Refresh the browser tab to load the updated interface. The lesson-specific local URL and first-run instructions are listed below.
+
 ## Run the application
 
 Requirements: **Node.js 22.14+**, npm, Git, and a browser.
@@ -166,5 +195,3 @@ On Linux, use `npx playwright install --with-deps chromium` if needed. GitHub Ac
 Online documentation evolves; this sample's contract is the pinned package. Previous sample: [Lesson 4 Configuration Studio](https://github.com/luiscoco/claude-agent-sdk-lesson-04).
 
 MIT © Luis Coco Enríquez. Independent educational sample; not an official Anthropic product.
-
-See [visual style and reading controls](docs/visual-style.md) for the refreshed reference palette, larger typography, and persistent text-size setting.
