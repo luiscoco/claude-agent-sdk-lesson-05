@@ -1,6 +1,7 @@
 import './style.css';
 import './course-theme.css';
 import './course-theme.js';
+import { renderMarkdown } from './markdown.js';
 import { createEventParser } from '../shared/sse.js';
 import {
   DEFAULT_CONFIG,
@@ -19,6 +20,12 @@ const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getEleme
 const text = (id: string, value: string) => {
   $(id).textContent = value;
 };
+// Model output is rendered as Markdown; host placeholders and errors stay plain text.
+function showResult(value: string, markdown = false) {
+  if (markdown) renderMarkdown($('result'), value);
+  else text('result', value);
+  $('result').classList.toggle('markdown', markdown);
+}
 let scenario: Scenario = 'read';
 let running = false;
 let controller: AbortController | undefined;
@@ -173,7 +180,7 @@ function renderReport(next: Report) {
   text('read-count', String(next.counters.readCalls + next.counters.searchCalls));
   text('callback-count', String(next.counters.callbackCalls));
   text('mutation-count', String(next.counters.mutations));
-  text('result', next.text);
+  showResult(next.text, true);
   text(
     'counter-detail',
     `Save handler: ${next.counters.saveCalls} · Command handler: ${next.counters.commandCalls} · SDK permission denials: ${next.permissionDenials}${next.costUsd === undefined ? '' : ` · Estimated cost: $${next.costUsd.toFixed(4)}`}`,
@@ -235,7 +242,7 @@ $('run-form').addEventListener('submit', async (event) => {
   refreshApprovals();
   text('status', 'Running');
   text('result-label', submittedMode === 'live' ? 'REAL SDK RUN' : 'LOCAL HOST POLICY ROUTER');
-  text('result', 'Waiting for the scenario outcome…');
+  showResult('Waiting for the scenario outcome…');
   for (const id of ['read-count', 'callback-count', 'mutation-count']) text(id, '0');
   text('counter-detail', 'Counters are finalized when the run ends.');
   $('board').replaceChildren();
@@ -262,7 +269,7 @@ $('run-form').addEventListener('submit', async (event) => {
       append(event);
       if (event.kind === 'result') renderReport(event.data as Report);
       if (event.kind === 'error') {
-        text('result', event.detail);
+        showResult(event.detail);
         text('status', 'Failed');
       }
       if (event.kind === 'done') {
@@ -292,7 +299,7 @@ $('run-form').addEventListener('submit', async (event) => {
       ? 'The run was cancelled; pending approvals and grants are closed.'
       : (error as Error).message;
     text('status', cancelled ? 'Cancelled' : 'Failed');
-    text('result', detail);
+    showResult(detail);
     append({ kind: 'error', title: cancelled ? 'Cancelled' : 'Run failed', detail });
   } finally {
     if (!report) {

@@ -584,6 +584,70 @@ summary {
   overflow-wrap: anywhere;
   white-space: pre-wrap;
 }
+/* Rendered Markdown from model text (see markdown.ts). */
+.markdown,
+#result.markdown {
+  white-space: normal;
+}
+.markdown > :first-child {
+  margin-top: 0;
+}
+.markdown > :last-child {
+  margin-bottom: 0;
+}
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown pre {
+  margin: 0 0 0.8em;
+}
+.markdown :is(h3, h4, h5, h6) {
+  margin: 1.1em 0 0.4em;
+  font-size: 1.05em;
+  line-height: 1.4;
+}
+.markdown h3 {
+  font-size: 1.15em;
+}
+.markdown :is(ul, ol) {
+  padding-left: 1.4em;
+}
+.markdown li + li {
+  margin-top: 0.25em;
+}
+.markdown code {
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: rgba(0, 126, 137, 0.08);
+}
+.markdown pre {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: rgba(0, 126, 137, 0.06);
+  color: var(--ink);
+  border: 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+.markdown pre code {
+  padding: 0;
+  background: none;
+}
+.markdown blockquote {
+  padding-left: 12px;
+  border-left: 3px solid var(--teal);
+  color: var(--muted);
+}
+.markdown hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 126, 137, 0.2);
+  margin: 1em 0;
+}
+.markdown a {
+  color: var(--teal);
+}
 .log-legend {
   display: flex;
   gap: 18px;
