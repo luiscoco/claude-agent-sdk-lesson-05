@@ -42,7 +42,7 @@ const lineBroken = (lines: string[]) =>
 const BULLET = /^\s*[-*+]\s+(.*)$/;
 const ORDERED = /^\s*\d+[.)]\s+(.*)$/;
 const HEADING = /^(#{1,6})\s+(.*?)\s*#*\s*$/;
-const FENCE = /^\s*(```|~~~)/;
+const FENCE = /^\s*(```|~~~)\s*([\w+-]*)/;
 const RULE = /^\s*([-*_])(\s*\1){2,}\s*$/;
 
 export function renderMarkdown(target: HTMLElement, source: string) {
@@ -55,11 +55,14 @@ export function renderMarkdown(target: HTMLElement, source: string) {
     if (!line.trim()) {
       i++;
     } else if (FENCE.test(line)) {
-      const fence = FENCE.exec(line)![1]!;
+      const [, fence = '```', lang = ''] = FENCE.exec(line)!;
       const body: string[] = [];
       for (i++; i < lines.length && !at(i).trim().startsWith(fence); i++) body.push(at(i));
       i++;
-      blocks.push(el('pre', [el('code', [body.join('\n')])]));
+      const code = el('code', [body.join('\n')]);
+      // highlight.ts reads the fence's language from this class.
+      if (lang) code.className = `language-${lang}`;
+      blocks.push(el('pre', [code]));
     } else if (HEADING.test(line)) {
       const [, hashes = '', title = ''] = HEADING.exec(line)!;
       // Results sit under the panel's own h2, so shift headings down to h3–h6.

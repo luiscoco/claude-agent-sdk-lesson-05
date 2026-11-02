@@ -1,0 +1,54 @@
+/* Token colours for highlight.ts. Snippets on light backgrounds use the first palette;
+   course-theme.css draws every <pre> dark navy, so <pre> switches to the bright one.
+   Add .code-light to a <pre> that a page restyles with a light background. */
+:root,
+.code-light {
+  --tok-keyword: #7c3aed;
+  --tok-string: #15803d;
+  --tok-comment: #64748b;
+  --tok-number: #c2410c;
+  --tok-literal: #be185d;
+  --tok-function: #1d4ed8;
+  --tok-type: #a16207;
+  --tok-property: #0e7490;
+  --tok-variable: #b91c1c;
+}
+pre:not(.code-light) {
+  --tok-keyword: #d6a8ff;
+  --tok-string: #b5e48c;
+  --tok-comment: #93a7c9;
+  --tok-number: #ffb38a;
+  --tok-literal: #ff9cc1;
+  --tok-function: #8fb8ff;
+  --tok-type: #ffd479;
+  --tok-property: #7fe3f2;
+  --tok-variable: #ff8f8f;
+}
+.tok-keyword {
+  color: var(--tok-keyword);
+}
+.tok-string {
+  color: var(--tok-string);
+}
+.tok-comment {
+  color: var(--tok-comment);
+  font-style: italic;
+}
+.tok-number {
+  color: var(--tok-number);
+}
+.tok-literal {
+  color: var(--tok-literal);
+}
+.tok-function {
+  color: var(--tok-function);
+}
+.tok-type {
+  color: var(--tok-type);
+}
+.tok-property {
+  color: var(--tok-property);
+}
+.tok-variable {
+  color: var(--tok-variable);
+}

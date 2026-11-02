@@ -625,9 +625,6 @@ summary {
 .markdown pre {
   padding: 12px 14px;
   border-radius: 8px;
-  background: rgba(0, 126, 137, 0.06);
-  color: var(--ink);
-  border: 0;
   overflow-x: auto;
   white-space: pre;
 }

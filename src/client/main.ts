@@ -1,6 +1,7 @@
 import './style.css';
 import './course-theme.css';
 import './course-theme.js';
+import { observeCode } from './highlight.js';
 import { renderMarkdown } from './markdown.js';
 import { createEventParser } from '../shared/sse.js';
 import {
@@ -34,6 +35,7 @@ let report: Report | undefined;
 let submitted: Config | undefined;
 let submittedMode = 'local';
 const approvals = new Map<string, HTMLElement>();
+observeCode();
 function notice(message = '') {
   text('notice', message);
   $('notice').hidden = !message;
