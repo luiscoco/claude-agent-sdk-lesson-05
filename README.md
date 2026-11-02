@@ -4,7 +4,7 @@ A hands-on companion to **Claude Agent SDK TypeScript version 0.3.310**, by Luis
 
 Learn **Lesson 5: Tools and Permissions** by separating a capability's contract, its approval policy, and evidence that its handler actually executed. The lab supports local policy exercises and real SDK queries, including a one-time human approval desk.
 
-![Tool Policy Lab during a real SDK approval request](docs/tool-policy-lab.png)
+![Refreshed course interface with larger text](docs/visual-refresh-desktop.png)
 
 ## Run the application
 
@@ -166,3 +166,5 @@ On Linux, use `npx playwright install --with-deps chromium` if needed. GitHub Ac
 Online documentation evolves; this sample's contract is the pinned package. Previous sample: [Lesson 4 Configuration Studio](https://github.com/luiscoco/claude-agent-sdk-lesson-04).
 
 MIT © Luis Coco Enríquez. Independent educational sample; not an official Anthropic product.
+
+See [visual style and reading controls](docs/visual-style.md) for the refreshed reference palette, larger typography, and persistent text-size setting.

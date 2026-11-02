@@ -1,4 +1,6 @@
 import './style.css';
+import './course-theme.css';
+import './course-theme.js';
 import { createEventParser } from '../shared/sse.js';
 import {
   DEFAULT_CONFIG,

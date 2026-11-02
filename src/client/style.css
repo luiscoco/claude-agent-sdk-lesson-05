@@ -50,7 +50,7 @@ button {
   background: white;
   color: #294656;
   padding: 10px 12px;
-  font-size: 12px;
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -113,7 +113,7 @@ footer {
   gap: 12px;
   align-items: center;
   color: #20323e;
-  font-size: 20px;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.6px;
 }
@@ -129,14 +129,14 @@ footer {
   background: var(--orange);
   color: white;
   font:
-    500 20px 'IBM Plex Mono',
+    500 1.05rem 'IBM Plex Mono',
     monospace;
   box-shadow: 0 5px 14px #b94c251e;
 }
 .brand small {
   display: block;
   font:
-    500 9px 'IBM Plex Mono',
+    500 0.86rem 'IBM Plex Mono',
     monospace;
   letter-spacing: 2px;
   margin-top: 5px;
@@ -146,11 +146,11 @@ footer {
   display: flex;
   align-items: center;
   gap: 24px;
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 .version {
   font:
-    10px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   background: white;
   padding: 9px 12px;
@@ -165,7 +165,7 @@ footer {
 }
 .eyebrow {
   font:
-    600 10px 'IBM Plex Mono',
+    600 0.86rem 'IBM Plex Mono',
     monospace;
   letter-spacing: 1.6px;
   color: var(--orange);
@@ -175,7 +175,7 @@ footer {
   color: var(--muted);
 }
 h1 {
-  font-size: 55px;
+  font-size: 2.619rem;
   letter-spacing: -2.6px;
   line-height: 1.12;
   margin: 0 0 23px;
@@ -184,7 +184,7 @@ h1 span {
   color: var(--teal);
 }
 .intro {
-  font-size: 15px;
+  font-size: 0.95rem;
   line-height: 1.85;
   color: var(--muted);
   margin: 0 0 24px;
@@ -194,7 +194,7 @@ h1 span {
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
-  font-size: 10px;
+  font-size: 0.86rem;
   color: var(--muted);
 }
 .pill {
@@ -214,21 +214,21 @@ h1 span {
   box-shadow: 0 8px 30px #20323e03;
 }
 .lesson-card > strong {
-  font-size: 46px;
+  font-size: 2.1905rem;
   color: var(--orange);
   letter-spacing: -2px;
 }
 .lesson-card > strong span {
-  font-size: 13px;
+  font-size: 0.9rem;
   color: #879da9;
   letter-spacing: 0;
 }
 .lesson-card h2 {
-  font-size: 14px;
+  font-size: 0.95rem;
   margin: 17px 0 9px;
 }
 .lesson-card p {
-  font-size: 12px;
+  font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -239,7 +239,7 @@ h1 span {
   border-top: 3px solid #a8dede;
 }
 .lesson-card small {
-  font-size: 10px;
+  font-size: 0.86rem;
   line-height: 2;
   color: var(--muted);
 }
@@ -259,10 +259,10 @@ h1 span {
   color: var(--muted);
   background: transparent;
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 0.86rem;
 }
 .tabs button span {
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 .tabs button[aria-selected='true'] {
   border-bottom: 3px solid var(--orange);
@@ -280,7 +280,7 @@ main > section[role='tabpanel'] {
   border: 1px solid #e7b1a2;
   background: #fff2eb;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 0.9rem;
   color: #96371f;
 }
 [hidden] {
@@ -316,7 +316,7 @@ main > section[role='tabpanel'] {
   border: 1px solid var(--border);
   border-radius: 50%;
   font:
-    11px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   color: var(--muted);
 }
@@ -326,12 +326,12 @@ main > section[role='tabpanel'] {
   border-color: var(--teal);
 }
 .lifecycle span {
-  font-size: 12px;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 .lifecycle small {
   display: block;
-  font-size: 10px;
+  font-size: 0.86rem;
   font-weight: 400;
   color: var(--muted);
   margin-top: 7px;
@@ -352,17 +352,17 @@ main > section[role='tabpanel'] {
   margin-bottom: 24px;
 }
 .mode-banner strong {
-  font-size: 13px;
+  font-size: 0.9rem;
 }
 .mode-banner p {
-  font-size: 11px;
+  font-size: 0.86rem;
   line-height: 1.6;
   color: #526f77;
   margin: 5px 0 0;
 }
 .tag {
   font:
-    9px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   border: 1px solid var(--border);
   border-radius: 5px;
@@ -388,7 +388,7 @@ main > section[role='tabpanel'] {
   padding: 25px;
 }
 .controls h2 {
-  font-size: 18px;
+  font-size: 1rem;
   margin: 0 0 26px;
   letter-spacing: -0.3px;
 }
@@ -396,7 +396,7 @@ main > section[role='tabpanel'] {
   margin-bottom: 9px;
 }
 .controls label {
-  font-size: 12px;
+  font-size: 0.9rem;
   display: block;
   font-weight: 700;
   margin: 0 0 9px;
@@ -411,27 +411,27 @@ textarea {
   padding: 11px 12px;
   width: 100%;
   min-width: 0;
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 textarea {
   font:
-    11px/1.7 'IBM Plex Mono',
+    0.86rem/1.7 'IBM Plex Mono',
     monospace;
   resize: vertical;
   min-height: 112px;
 }
 select {
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 .hint {
-  font-size: 11px;
+  font-size: 0.86rem;
   line-height: 1.8;
   color: var(--muted);
   margin: 10px 0 0;
 }
 .tiny-code {
   font:
-    9px/1.8 'IBM Plex Mono',
+    0.86rem/1.8 'IBM Plex Mono',
     monospace;
   display: block;
   white-space: normal;
@@ -445,7 +445,7 @@ select {
   margin-top: 24px;
 }
 .controls h3 {
-  font-size: 12px;
+  font-size: 0.9rem;
   margin: 0 0 12px;
 }
 .control-group textarea {
@@ -457,11 +457,11 @@ select {
   gap: 8px;
 }
 .button-grid button {
-  font-size: 11px;
+  font-size: 0.86rem;
   padding: 10px 6px;
 }
 details {
-  font-size: 11px;
+  font-size: 0.86rem;
 }
 summary {
   cursor: pointer;
@@ -497,13 +497,13 @@ summary {
   margin-bottom: 8px;
 }
 .panel-heading h2 {
-  font-size: 18px;
+  font-size: 1rem;
   margin: 0;
   letter-spacing: -0.3px;
 }
 .status {
   font:
-    10px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   background: #eff3f5;
   color: #607987;
@@ -534,7 +534,7 @@ summary {
   justify-content: space-between;
   gap: 10px;
   font:
-    10px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   color: var(--muted);
   overflow-wrap: anywhere;
@@ -560,12 +560,12 @@ summary {
 }
 .metrics strong {
   font:
-    500 27px 'IBM Plex Mono',
+    500 1.2857rem 'IBM Plex Mono',
     monospace;
   letter-spacing: -1px;
 }
 .metrics span {
-  font-size: 10px;
+  font-size: 0.86rem;
   color: var(--muted);
 }
 .result-box {
@@ -574,11 +574,11 @@ summary {
 }
 .result-box .eyebrow {
   color: var(--teal);
-  font-size: 9px;
+  font-size: 0.86rem;
   margin-bottom: 11px;
 }
 #result {
-  font-size: 13px;
+  font-size: 0.9rem;
   line-height: 1.8;
   margin: 0;
   overflow-wrap: anywhere;
@@ -588,7 +588,7 @@ summary {
   display: flex;
   gap: 18px;
   padding: 0 24px 18px;
-  font-size: 10px;
+  font-size: 0.86rem;
   color: var(--muted);
 }
 .log-legend span:nth-child(1) {
@@ -613,17 +613,17 @@ summary {
 }
 .empty > span {
   font:
-    34px 'IBM Plex Mono',
+    1.619rem 'IBM Plex Mono',
     monospace;
   color: #a7c1c6;
 }
 .empty h3 {
-  font-size: 14px;
+  font-size: 0.95rem;
   color: #486570;
   margin: 12px 0 0;
 }
 .empty p {
-  font-size: 12px;
+  font-size: 0.9rem;
   line-height: 1.8;
 }
 .event {
@@ -646,17 +646,17 @@ summary {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  font-size: 11px;
+  font-size: 0.86rem;
 }
 .event-heading time {
   font:
-    9px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   color: #8ba0aa;
   white-space: nowrap;
 }
 .event p {
-  font-size: 11px;
+  font-size: 0.86rem;
   line-height: 1.8;
   color: var(--muted);
   margin: 6px 0;
@@ -665,11 +665,11 @@ summary {
 }
 .event details {
   color: var(--teal);
-  font-size: 10px;
+  font-size: 0.86rem;
 }
 .stream-footer {
   border-top: 1px solid #edf2f4;
-  font-size: 10px;
+  font-size: 0.86rem;
   color: var(--muted);
   padding: 12px 24px;
   margin: 0;
@@ -694,12 +694,12 @@ summary {
 }
 .usage-values b {
   font:
-    500 19px 'IBM Plex Mono',
+    500 1rem 'IBM Plex Mono',
     monospace;
   color: var(--teal);
 }
 .usage-values span {
-  font-size: 10px;
+  font-size: 0.86rem;
   color: var(--muted);
 }
 .usage-panel details {
@@ -707,7 +707,7 @@ summary {
 }
 pre {
   font:
-    10px/1.8 'IBM Plex Mono',
+    0.86rem/1.8 'IBM Plex Mono',
     monospace;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -726,12 +726,12 @@ code {
   max-width: 770px;
 }
 .section-intro h2 {
-  font-size: 30px;
+  font-size: 1.4286rem;
   letter-spacing: -1px;
   margin: 0 0 16px;
 }
 .section-intro > p:last-child {
-  font-size: 14px;
+  font-size: 0.95rem;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -745,7 +745,7 @@ code {
 }
 .method-card small {
   font:
-    9px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -753,7 +753,7 @@ code {
 }
 .method-card h3 {
   font:
-    500 14px 'IBM Plex Mono',
+    500 0.95rem 'IBM Plex Mono',
     monospace;
   color: var(--teal);
   overflow-wrap: anywhere;
@@ -761,7 +761,7 @@ code {
 }
 .method-card p,
 .guide-grid p {
-  font-size: 12px;
+  font-size: 0.9rem;
   line-height: 1.9;
   color: var(--muted);
   margin-bottom: 0;
@@ -776,12 +776,12 @@ code {
   padding: 26px;
 }
 .guide-grid h3 {
-  font-size: 17px;
+  font-size: 1rem;
   margin: 0 0 20px;
 }
 .guide-grid a {
   display: block;
-  font-size: 12px;
+  font-size: 0.9rem;
   margin-top: 20px;
 }
 fieldset {
@@ -792,7 +792,7 @@ fieldset {
   margin: 0 0 20px;
 }
 legend {
-  font-size: 14px;
+  font-size: 0.95rem;
   font-weight: 700;
   padding: 0 8px;
   line-height: 1.6;
@@ -802,7 +802,7 @@ fieldset label {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  font-size: 13px;
+  font-size: 0.9rem;
   line-height: 1.5;
   cursor: pointer;
 }
@@ -819,7 +819,7 @@ fieldset input {
   min-width: 180px;
 }
 #quiz-score {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--teal);
   font-weight: 700;
 }
@@ -830,7 +830,7 @@ footer {
   border-top: 1px solid var(--border);
   margin-top: 40px;
   padding: 32px;
-  font-size: 10px;
+  font-size: 0.86rem;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -842,7 +842,7 @@ footer {
 }
 @media (max-width: 1000px) {
   h1 {
-    font-size: 45px;
+    font-size: 2.1429rem;
   }
   .lesson-card {
     min-width: 220px;
@@ -859,7 +859,7 @@ footer {
     gap: 8px;
   }
   .lifecycle small {
-    font-size: 9px;
+    font-size: 0.86rem;
   }
   .lifecycle i {
     display: none;
@@ -886,19 +886,19 @@ footer {
     padding: 0 20px;
   }
   .brand {
-    font-size: 16px;
+    font-size: 1rem;
     gap: 9px;
   }
   .brand-icon {
     width: 35px;
     height: 35px;
-    font-size: 17px;
+    font-size: 1rem;
   }
   .version {
     display: none;
   }
   .top-links {
-    font-size: 10px;
+    font-size: 0.86rem;
   }
   .hero {
     padding: 38px 20px 36px;
@@ -907,11 +907,11 @@ footer {
     display: none;
   }
   h1 {
-    font-size: 43px;
+    font-size: 2.0476rem;
     letter-spacing: -2px;
   }
   .intro {
-    font-size: 13px;
+    font-size: 0.9rem;
   }
   .desktop {
     display: none;
@@ -927,7 +927,7 @@ footer {
     padding-top: 10px;
   }
   .tabs button span {
-    font-size: 11px;
+    font-size: 0.86rem;
   }
   main > section[role='tabpanel'] {
     padding: 0 20px;
@@ -941,7 +941,7 @@ footer {
     padding: 14px;
   }
   .lifecycle small {
-    font-size: 10px;
+    font-size: 0.86rem;
   }
   .mode-banner {
     padding: 15px;
@@ -965,7 +965,7 @@ footer {
     flex-wrap: wrap;
   }
   .panel-heading h2 {
-    font-size: 17px;
+    font-size: 1rem;
   }
   .usage-panel {
     padding: 0 20px 20px;
@@ -977,10 +977,10 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
   .usage-values b {
-    font-size: 15px;
+    font-size: 0.95rem;
   }
   .metrics strong {
-    font-size: 25px;
+    font-size: 1.1905rem;
   }
   .metrics div {
     padding: 0 12px;
@@ -997,14 +997,14 @@ footer {
   .log-legend {
     gap: 13px;
     padding: 0 20px 16px;
-    font-size: 9px;
+    font-size: 0.86rem;
   }
   .method-cards,
   .guide-grid {
     grid-template-columns: 1fr;
   }
   .section-intro h2 {
-    font-size: 27px;
+    font-size: 1.2857rem;
   }
   .section-intro {
     margin-top: 25px;
@@ -1022,7 +1022,7 @@ footer {
     margin: 0 20px 20px;
   }
   .usage-values span {
-    font-size: 9px;
+    font-size: 0.86rem;
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1056,10 +1056,10 @@ footer {
   padding: 15px;
 }
 .scenario-card strong {
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 .scenario-card span {
-  font-size: 10px;
+  font-size: 0.86rem;
   line-height: 1.8;
   font-weight: 400;
   color: var(--muted);
@@ -1078,10 +1078,10 @@ footer {
   padding-left: 13px;
 }
 .boundary-note b {
-  font-size: 11px;
+  font-size: 0.86rem;
 }
 .boundary-note p {
-  font-size: 10px;
+  font-size: 0.86rem;
   line-height: 1.9;
   color: var(--muted);
 }
@@ -1097,7 +1097,7 @@ footer {
 }
 .policy-badge {
   font:
-    9px 'IBM Plex Mono',
+    0.86rem 'IBM Plex Mono',
     monospace;
   display: inline-block;
   padding: 7px 9px;
@@ -1120,20 +1120,20 @@ footer {
 }
 .tool-row h3 {
   font:
-    500 12px 'IBM Plex Mono',
+    500 0.9rem 'IBM Plex Mono',
     monospace;
   margin: 2px 0 8px;
   color: #234854;
   overflow-wrap: anywhere;
 }
 .tool-row p {
-  font-size: 11px;
+  font-size: 0.86rem;
   line-height: 1.7;
   color: var(--muted);
   margin: 0 0 7px;
 }
 .tool-row code {
-  font-size: 9px;
+  font-size: 0.86rem;
   line-height: 1.7;
   color: #567882;
   overflow-wrap: anywhere;
@@ -1156,23 +1156,23 @@ footer {
 }
 .approval-empty > span {
   font:
-    28px 'IBM Plex Mono',
+    1.3333rem 'IBM Plex Mono',
     monospace;
   color: #9cbdc0;
 }
 .approval-empty strong {
-  font-size: 13px;
+  font-size: 0.9rem;
   color: #365c65;
 }
 .approval-empty p {
-  font-size: 11px;
+  font-size: 0.86rem;
   line-height: 1.8;
   margin: 0;
 }
 .approval-footer {
   border-top: 1px solid #e8eff1;
   padding: 13px 24px;
-  font-size: 10px;
+  font-size: 0.86rem;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -1183,18 +1183,18 @@ footer {
 }
 .approval-card > small {
   font:
-    9px/1.8 'IBM Plex Mono',
+    0.86rem/1.8 'IBM Plex Mono',
     monospace;
   color: #8d692d;
   overflow-wrap: anywhere;
 }
 .approval-card h3 {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 14px 0 8px;
   overflow-wrap: anywhere;
 }
 .approval-card p {
-  font-size: 12px;
+  font-size: 0.9rem;
   line-height: 1.8;
   color: #526d76;
   white-space: pre-wrap;
@@ -1229,7 +1229,7 @@ footer {
   border-top: 1px solid #e8eff1;
 }
 .board h3 {
-  font-size: 12px;
+  font-size: 0.9rem;
   margin: 0 0 12px;
 }
 .saved-note {
@@ -1240,12 +1240,12 @@ footer {
   margin-top: 10px;
 }
 .saved-note h4 {
-  font-size: 13px;
+  font-size: 0.9rem;
   margin: 0 0 8px;
   overflow-wrap: anywhere;
 }
 .saved-note p {
-  font-size: 12px;
+  font-size: 0.9rem;
   line-height: 1.8;
   color: #4e6e64;
   margin: 0;
@@ -1256,7 +1256,7 @@ footer {
   height: 340px;
 }
 .policy-events .event > b {
-  font-size: 11px;
+  font-size: 0.86rem;
 }
 .family-grid {
   display: grid;
@@ -1272,18 +1272,18 @@ footer {
   min-width: 0;
 }
 .family-card h3 {
-  font-size: 13px;
+  font-size: 0.9rem;
   margin: 0 0 12px;
 }
 .family-card p {
   font:
-    11px/1.9 'IBM Plex Mono',
+    0.86rem/1.9 'IBM Plex Mono',
     monospace;
   color: var(--teal);
   overflow-wrap: anywhere;
 }
 .family-card small {
-  font-size: 9px;
+  font-size: 0.86rem;
   line-height: 1.7;
   color: var(--muted);
 }
@@ -1310,10 +1310,10 @@ footer {
   .policy-badge {
     min-width: 45px;
     padding: 7px 6px;
-    font-size: 8px;
+    font-size: 0.86rem;
   }
   .tool-row h3 {
-    font-size: 11px;
+    font-size: 0.86rem;
   }
   .padded-details {
     padding: 15px 20px;
@@ -1332,10 +1332,10 @@ footer {
     padding: 18px 14px;
   }
   .family-card p {
-    font-size: 10px;
+    font-size: 0.86rem;
   }
   .policy-metrics span {
-    font-size: 9px;
+    font-size: 0.86rem;
   }
   .policy-metrics div {
     padding: 0 10px;
