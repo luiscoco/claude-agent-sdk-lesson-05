@@ -1,4 +1,4 @@
-# Lesson 05 · Tool Policy Lab
+# Lesson 05 Tool Policy Lab
 
 A hands-on companion to **Claude Agent SDK TypeScript version 0.3.310**, by Luis Coco Enríquez.
 
