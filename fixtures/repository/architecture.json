@@ -1,0 +1,8 @@
+{
+  "project": "Tiny Tasks Review Fixture",
+  "components": ["task domain", "CLI", "in-memory store"],
+  "notes": [
+    "TODO: Add validation for empty task titles",
+    "Keep domain rules independent from storage"
+  ]
+}

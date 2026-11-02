@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f7f7" />
+    <title>Lesson 05 · Tool Policy Lab</title>
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/"
+        ><span class="brand-icon">{ }</span><span>Tool Policy Lab<small>LESSON 05</small></span></a
+      >
+      <div class="top-links">
+        <span class="version">SDK 0.3.310</span
+        ><a href="https://github.com/luiscoco/claude-agent-sdk-lesson-05">View source ↗</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">TOOLS &amp; PERMISSIONS</p>
+          <h1>Useful capabilities.<br /><span>Deliberate decisions.</span></h1>
+          <p class="intro">
+            Give the agent a tool. Decide when it may run.<br class="desktop" />
+            See what was requested, approved, and actually executed.
+          </p>
+          <div class="hero-badges">
+            <span class="pill">● Allow · Ask · Deny</span
+            ><span>Claude Agent SDK · TypeScript 0.3.310</span>
+          </div>
+        </div>
+        <aside class="lesson-card">
+          <strong>05<span> / 09</span></strong>
+          <h2>A contract and a policy.</h2>
+          <p>Reading, changing, and running<br />have different effects.</p>
+          <hr />
+          <small>A course companion by<br /><b>Luis Coco Enríquez</b></small>
+        </aside>
+      </section>
+      <nav class="tabs" role="tablist" aria-label="Lesson activities">
+        <button role="tab" aria-selected="true" aria-controls="lab" id="tab-lab">
+          01 <span>Policy lab</span></button
+        ><button
+          role="tab"
+          aria-selected="false"
+          aria-controls="guide"
+          id="tab-guide"
+          tabindex="-1"
+        >
+          02 <span>Tools &amp; policy guide</span></button
+        ><button role="tab" aria-selected="false" aria-controls="quiz" id="tab-quiz" tabindex="-1">
+          03 <span>Check your understanding</span>
+        </button>
+      </nav>
+      <div id="notice" role="alert" hidden></div>
+      <section id="lab" role="tabpanel" aria-labelledby="tab-lab">
+        <div class="mode-banner">
+          <div>
+            <strong id="mode-label">Local mode · host policy router + real MCP</strong>
+            <p id="mode-explanation">
+              No model request runs. The host applies an explicit policy before dispatching real MCP
+              calls.
+            </p>
+          </div>
+          <span id="key-status" class="tag">CHECKING LIVE SETUP</span>
+        </div>
+        <div class="workbench policy-grid">
+          <form class="panel controls" id="run-form">
+            <p class="eyebrow muted">THE HOST DECIDES</p>
+            <h2>Choose a scenario</h2>
+            <div id="scenarios" class="scenario-list"></div>
+            <div class="control-group">
+              <label for="permission-mode">Session permission mode</label
+              ><select id="permission-mode">
+                <option value="default">default · allow host decisions</option>
+                <option value="dontAsk">dontAsk · deny instead of prompting</option>
+              </select>
+              <p class="hint">
+                An always_ask tool is denied in dontAsk mode. Ordinary pre-approved reads still run.
+              </p>
+            </div>
+            <div id="note-inputs" class="control-group" hidden>
+              <label for="note-title">Proposed review title</label
+              ><input id="note-title" maxlength="80" value="Review unknown task IDs" /><label
+                for="note-body"
+                class="spaced-label"
+                >Proposed review note</label
+              ><textarea id="note-body" maxlength="400" rows="4">
+Add a focused test for completing a task that does not exist.</textarea>
+              <p class="hint">
+                The approval panel shows the exact tool arguments. Approved notes stay in memory for
+                this run.
+              </p>
+            </div>
+            <div class="control-group">
+              <label for="mode">Execution mode</label
+              ><select id="mode">
+                <option value="local">Local · no model request</option>
+                <option value="live">Live SDK · model charges apply</option>
+              </select>
+              <p class="hint" id="live-note">Checking server-side key availability…</p>
+              <button type="submit" class="primary" id="run">
+                Run local scenario <span>→</span></button
+              ><button type="button" class="danger" id="stop" hidden>Stop this run</button>
+            </div>
+            <div class="boundary-note">
+              <b>Small, explicit capability surface</b>
+              <p>
+                No built-in tools. Two fixed fixture notes. One in-memory change. No shell execution
+                or project-file edits.
+              </p>
+            </div>
+          </form>
+          <div class="observation">
+            <section class="panel inventory">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow muted">CAPABILITY ≠ APPROVAL</p>
+                  <h2>Tool contracts and policies</h2>
+                </div>
+                <span class="tag">4 CUSTOM TOOLS</span>
+              </div>
+              <div id="tool-rows"></div>
+              <details class="padded-details" id="source-details">
+                <summary>Inspect the actual tool definitions</summary>
+                <pre id="source">Open to load src/server/tools.ts.</pre>
+              </details>
+            </section>
+            <section class="panel approval-panel" aria-label="One-time approvals">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow muted">THE HUMAN DECISION</p>
+                  <h2>Approval desk</h2>
+                </div>
+                <span class="tag" id="approval-status">NO REQUEST PENDING</span>
+              </div>
+              <div id="approvals" aria-live="polite">
+                <div class="approval-empty" id="approval-empty">
+                  <span>↳</span><strong>Review before a change.</strong>
+                  <p>
+                    Run “Request one change” in default mode.<br />Approve once or deny the exact
+                    note.
+                  </p>
+                </div>
+              </div>
+              <div class="approval-footer">
+                Approvals expire after 45 seconds. A grant authorizes one argument-matched note
+                write in this run.
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow muted">EXECUTION EVIDENCE</p>
+                  <h2>Run outcome</h2>
+                </div>
+                <span class="status" id="status">Ready</span>
+              </div>
+              <div class="metrics policy-metrics">
+                <div><strong id="read-count">0</strong><span>read / search handlers</span></div>
+                <div>
+                  <strong id="callback-count">0</strong><span>SDK permission callbacks</span>
+                </div>
+                <div><strong id="mutation-count">0</strong><span>in-memory changes</span></div>
+              </div>
+              <div class="result-box">
+                <p class="eyebrow" id="result-label">NO RUN YET</p>
+                <p id="result">
+                  Choose a scenario, then compare policy decisions with handler execution.
+                </p>
+                <p class="hint" id="counter-detail">
+                  Save handler: 0 · Command handler: 0 · SDK permission denials: 0
+                </p>
+              </div>
+              <div class="board">
+                <h3>This run’s review board</h3>
+                <div id="board"><p class="hint">No note has been saved.</p></div>
+              </div>
+            </section>
+            <section class="panel stream">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow muted">REQUEST → DECISION → EXECUTION</p>
+                  <h2>Policy audit trail</h2>
+                </div>
+                <button id="export" class="text-button" disabled>Export trace ↓</button>
+              </div>
+              <div id="events" class="policy-events" aria-label="Policy events">
+                <div class="empty">
+                  <span>↳</span>
+                  <h3>Follow a tool request</h3>
+                  <p>
+                    Decisions and execution appear separately.<br />A final answer does not prove a
+                    tool ran.
+                  </p>
+                </div>
+              </div>
+              <p class="stream-footer">
+                Last 100 selected-field events. Server credentials and full SDK payloads are
+                omitted.
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+      <section id="guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
+        <div class="section-intro">
+          <p class="eyebrow">MATCH CAPABILITY TO EFFECT</p>
+          <h2>A tool contract and an approval strategy.</h2>
+          <p>
+            The live lab uses SDK-hosted policies from the installed 0.3.310 package. Local mode
+            uses its own explicit router; an MCP transport is not the SDK permission engine.
+          </p>
+        </div>
+        <div id="builtin-families" class="family-grid"></div>
+        <div id="guide-cards" class="method-cards"></div>
+        <div class="guide-grid">
+          <article class="panel">
+            <h3>Policy on the returned server config</h3>
+            <pre><code>const server = {
+  ...createSdkMcpServer({
+    name: 'workshop', tools: appTools,
+  }),
+  tools: [
+    { name: 'save_review_note',
+      permission_policy: 'always_ask' },
+    { name: 'run_command',
+      permission_policy: 'always_deny' },
+  ],
+};
+
+// query({ prompt: messages, options: {
+//   tools: [], mcpServers: { workshop: server },
+//   permissionMode: 'default', canUseTool,
+// } });</code></pre>
+            <p class="hint">
+              appTools contains positional tool(name, description, rawZodShape, handler, extras?)
+              definitions. The full runnable implementation is in src/server/tools.ts.
+            </p>
+          </article>
+          <article class="panel">
+            <h3>What should the counters show?</h3>
+            <p><b>Read-only:</b> real handlers run; pre-approval can skip canUseTool.</p>
+            <p>
+              <b>Approved note:</b> one host callback in live mode, one save handler, one in-memory
+              change.
+            </p>
+            <p>
+              <b>Declined or dontAsk:</b> no save handler and no change. dontAsk opens no approval
+              prompt.
+            </p>
+            <p>
+              <b>Command denial:</b> zero command handler calls. The stub also refuses execution if
+              called directly.
+            </p>
+            <a
+              href="https://github.com/luiscoco/claude-agent-sdk-lesson-05/blob/main/docs/lesson-5-walkthrough.md"
+              >Open the classroom walkthrough ↗</a
+            >
+          </article>
+        </div>
+      </section>
+      <section id="quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
+        <div class="section-intro">
+          <p class="eyebrow">CHECK YOUR UNDERSTANDING</p>
+          <h2>Can you explain why a tool ran?</h2>
+          <p>Compare the local and live policy paths, then check these four concepts.</p>
+        </div>
+        <form id="quiz-form">
+          <div id="questions"></div>
+          <button class="primary" type="submit">Check my answers</button>
+          <p id="quiz-score" role="status"></p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <span>Lesson 5 · Tools and Permissions</span
+      ><span
+        >Luis Coco Enríquez · MIT licensed ·
+        <a href="https://github.com/luiscoco/claude-agent-sdk-lesson-04"
+          >Lesson 4 companion ↗</a
+        ></span
+      >
+    </footer>
+    <script type="module" src="/src/client/main.ts"></script>
+  </body>
+</html>
