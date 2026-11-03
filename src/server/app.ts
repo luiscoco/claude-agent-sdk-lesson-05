@@ -117,7 +117,7 @@ export function createApiHandler(options: AppOptions = {}) {
     if (!parsed.success || !['local', 'live'].includes(String(input.mode))) {
       json(response, 400, {
         error:
-          'Choose a valid scenario and permission mode. Note title: 1â€“80 characters; body: 1â€“400.',
+          'Choose a valid scenario and permission mode. Note title: 1–80 characters; body: 1–400.',
       });
       return true;
     }
